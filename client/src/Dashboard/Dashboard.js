@@ -6,7 +6,7 @@ import Footer from "../Component/Footer";
 import axios from "axios";
 import { render } from "react-dom";
 
-const backEndUrl = "http://localhost:5000";
+const backEndUrl = "https://charge-point.herokuapp.com";
 
 class Dashboard extends React.Component {
 

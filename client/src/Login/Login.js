@@ -24,7 +24,7 @@ function Login(props) {
   const password = useFormInput("");
   const [error, setError] = useState(null);
 
-  const backEndUrl = "http://localhost:5000";
+  const backEndUrl = "https://charge-point.herokuapp.com";
 
   // handle button click of login form
   const handleLogin = () => {

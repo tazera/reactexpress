@@ -13,7 +13,7 @@ import PrivateRoute from './Utils/PrivateRoute';
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 
 
-const backEndUrl = 'http://localhost:5000'; 
+const backEndUrl = 'https://charge-point.herokuapp.com'; 
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
