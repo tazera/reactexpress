@@ -1,0 +1,28 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    justify-content: center; 
+    
+}
+.button{
+    background-color: #CC5500 ;
+    color: #fff;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+   align-self: center; 
+}
+.breakline{
+    border: 0;
+    clear:both;
+    display:block;
+    top:0%;
+    width: 100%;               
+    background-color: #CC5500;
+    height: 30px;
+    margin:0% ;
+}
+.TitleHeading{ color:black; text-align: left;  }
+.colorTwo {color: #CC5500;   text-align: left; }
