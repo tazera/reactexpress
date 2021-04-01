@@ -93,7 +93,7 @@ app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
+app.use(express.static(__dirname + "/client/build/static"));
 
 
  
@@ -122,10 +122,10 @@ app.use(function (req, res, next) {
 
 
 // request handlers
-app.get('/', (req, res) => {
-  if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
-  res.send('Welcome to the Node.js Tutorial! - ' + req.user.name);
-});
+// app.get('/', (req, res) => {
+//   if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
+//   res.send('Welcome to the Node.js Tutorial! - ' + req.user.name);
+// });
 
 
 // validate the user credentials
@@ -189,9 +189,9 @@ app.get('/verifyToken', function (req, res) {
 });
 
 
-//DB connection 
-
-
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 
 
