@@ -14,7 +14,7 @@ const app = express();
  const endPort = `https://charge-point.herokuapp.com`;
 
 // Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
-const port = process.env.PORT || `https://charge-point.herokuapp.com`;
+const port = process.env.PORT;
 // enable CORS
 app.use(cors());
 // parse application/json
