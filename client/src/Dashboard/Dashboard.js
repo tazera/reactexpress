@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
    let user = getUser();
    let locations = [];
-   axios.get(`${backEndUrl}/locations`).then((response) => {
+   axios.get(`${backEndUrl}/api/locations`).then((response) => {
     locations = [...response.data];
    })
    .catch((error) => {

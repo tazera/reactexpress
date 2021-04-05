@@ -10,7 +10,11 @@ const path = require('path');
 
 
 const app = express();
-const port = process.env.PORT || 5000;
+
+ const endPort = `https://charge-point.herokuapp.com/`;
+
+// Beshe || 5000 promenih go na https://charge-point.herokuapp.com/
+const port = process.env.PORT || `https://charge-point.herokuapp.com`;
 // enable CORS
 app.use(cors());
 // parse application/json
@@ -62,7 +66,7 @@ const db = admin.firestore();
 // });
 
 
-app.get('/locations', async(req, res) => {
+app.get('/api/locations', async(req, res) => {
   let locations = [];
    db.collection('location').get().then((snapshot) => {
     snapshot.docs.forEach(doc =>{
@@ -142,7 +146,7 @@ app.use(function (req, res, next) {
 
 
 // validate the user credentials
-app.post('/users/signin', function (req, res) {
+app.post('/api/users/signin', function (req, res) {
   const user = req.body.username;
   const pwd = req.body.password;
 
@@ -172,7 +176,7 @@ app.post('/users/signin', function (req, res) {
 
 
 // verify the token and return it if it's valid
-app.get('/verifyToken', function (req, res) {
+app.get('/api/verifyToken', function (req, res) {
   // check header or url parameters or post parameters for token
   var token = req.body.token || req.query.token;
   if (!token) {
