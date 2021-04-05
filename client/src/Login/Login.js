@@ -5,7 +5,7 @@ import "./Login.css";
 import "../Component/Footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../Component/Footer";
-
+import Config from "./Config";
 function Login(props) {
     const useFormInput = (initialValue) => {
     const [value, setValue] = useState(initialValue);
@@ -24,7 +24,7 @@ function Login(props) {
   const password = useFormInput("");
   const [error, setError] = useState(null);
 
-  const backEndUrl = "https://charge-point.herokuapp.com";
+  //const backEndUrl = "https://charge-point.herokuapp.com";
    //const biq = process.env.PORT;
    
   // handle button click of login form
@@ -32,7 +32,7 @@ function Login(props) {
     setError(null);
     setLoading(true);
     axios
-      .post(`${backEndUrl}/api/users/signin`, {
+      .post(`${Config.SERVER_URI}/api/users/signin`, {
         username: username.value,
         password: password.value,
         
