@@ -32,10 +32,15 @@ function Login(props) {
     setLoading(true);
     axios
       .post(`${backEndUrl}/api/users/signin`, {
-        username: username.value,
+       username: username.value,
         password: password.value,
-      })
+        
+
+      }) 
       .then((response) => {
+        console.log(username);
+        console.log(password);
+
         setLoading(false);
         setUserSession(response.data.token, response.data.user);
         props.history.push("/dashboard");
