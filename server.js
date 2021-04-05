@@ -140,7 +140,7 @@ app.use(function (req, res, next) {
 
 //app.post('/api/users/signin', function (req, res) {
 // validate the user credentials
-app.post(`${process.env.PORT}/api/users/signin`, function (req, res) {
+app.post(`https://charge-point.herokuapp.com/api/users/signin`, function (req, res) {
   const user = req.body.username;
   const pwd = req.body.password;
 
