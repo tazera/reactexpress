@@ -11,7 +11,6 @@ const path = require('path');
 
 const app = express();
 
- const endPort = `https://charge-point.herokuapp.com`;
 
 // Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
 const port = process.env.PORT;
@@ -140,7 +139,7 @@ app.use(function (req, res, next) {
 
 //app.post('/api/users/signin', function (req, res) {
 // validate the user credentials
-app.post(`${endPort}/api/users/signin`, function (req, res) {
+app.post(`${process.env.PORT}/api/users/signin`, function (req, res) {
   const user = req.body.username;
   const pwd = req.body.password;
 
