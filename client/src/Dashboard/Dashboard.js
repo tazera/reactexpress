@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
   // handle click event of logout button
    handleLogout = () => {
     removeUserSession();
-    this.props.history.push("/");
+    this.props.history.push("https://charge-point.herokuapp.com");
   };
 
   
