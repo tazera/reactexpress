@@ -11,10 +11,10 @@ const path = require('path');
 
 const app = express();
 
- const endPort = `https://charge-point.herokuapp.com/`;
+ const endPort = `https://charge-point.herokuapp.com`;
 
 // Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
-const port = `https://charge-point.herokuapp.com`;
+const port = process.env.PORT || `https://charge-point.herokuapp.com`;
 // enable CORS
 app.use(cors());
 // parse application/json
@@ -138,15 +138,9 @@ app.use(function (req, res, next) {
 });
 
 
-// request handlers
-// app.get('/', (req, res) => {
-//   if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
-//   res.send('Welcome to the Node.js Tutorial! - ' + req.user.name);
-// });
-
-
+//app.post('/api/users/signin', function (req, res) {
 // validate the user credentials
-app.post('/api/users/signin', function (req, res) {
+app.post(`${endPort}/api/users/signin`, function (req, res) {
   const user = req.body.username;
   const pwd = req.body.password;
 
