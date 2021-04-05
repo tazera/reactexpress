@@ -13,8 +13,8 @@ const app = express();
 
  const endPort = `https://charge-point.herokuapp.com/`;
 
-// Beshe || 5000 promenih go na https://charge-point.herokuapp.com/
-const port = process.env.PORT || `https://charge-point.herokuapp.com`;
+// Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
+const port = `https://charge-point.herokuapp.com`;
 // enable CORS
 app.use(cors());
 // parse application/json
@@ -221,51 +221,3 @@ app.listen(port, () => {
 
 
 
-
-
-
-/*const express = require('express');
-const cors = require('cors');
-const app = express();
-
-
-
-
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    );
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET, POST, PATCH, PUT, DELETE, OPTIONS'
-    );
-    next();
-  });
-
-  app.use(cors());
-
-  app.use('/login', (req, res) => {
-    res.send({
-      token: 'test123'
-    });
-  }); 
-
-
-
-
-app.get('/api/users',(req, res) => {
- const users = [
-     {id: 1, username: 'tazera', password: '12345'},
-     {id: 2, username: 'judo', password: '1234'},
-     {id: 3, username: 'pesho', password: '12345'},
- ];
- res.json(users);
-});
-
-
-
-const port = 5000;
-
-app.listen(port, () => console.log(`Server started on port ${port}`)); */
