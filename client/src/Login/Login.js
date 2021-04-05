@@ -26,7 +26,7 @@ function Login(props) {
 
  // const backEndUrl = "https://charge-point.herokuapp.com";
    const biq = process.env.PORT;
-
+   console.log(biq);
   // handle button click of login form
   const handleLogin = () => {
     setError(null);
@@ -41,7 +41,7 @@ function Login(props) {
       .then((response) => {
         console.log(username);
         console.log(password);
-        console.log(biq);
+       
 
         setLoading(false);
         setUserSession(response.data.token, response.data.user);
