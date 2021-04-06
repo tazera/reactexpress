@@ -8,7 +8,7 @@ const utils = require('./utils');
 const path = require('path');
 const app = express();
 
-c
+
 
 // Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
 const port = process.env.PORT || 5000;
