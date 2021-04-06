@@ -8,12 +8,7 @@ const utils = require('./utils');
 const path = require('path');
 const app = express();
 
-const proxy = require('http-proxy-middleware')
-
-module.exports = function(app) {
-    // add other server routes to path array
-    app.use(proxy(['/api' ], { target: 'http://localhost:5000' }));
-} 
+c
 
 // Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
 const port = process.env.PORT || 5000;
