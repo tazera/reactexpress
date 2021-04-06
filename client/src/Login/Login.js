@@ -19,15 +19,17 @@ function Login(props) {
     };
   };
 
+   //state for the loggin username and password
   const [loading, setLoading] = useState(false);
   const username = useFormInput("");
   const password = useFormInput("");
   const [error, setError] = useState(null);
 
+  // the url of heroku have to be moved at .env file 
   const backEndUrl = "https://charge-point.herokuapp.com/api";
   
    
-  // handle button click of login form
+  // handle button click of login form 
   const handleLogin = () => {
     setError(null);
     setLoading(true);

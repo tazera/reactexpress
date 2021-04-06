@@ -30,7 +30,7 @@ function getCleanUser(user) {
     isAdmin: user.isAdmin
   };
 }
-
+// export the modules
 module.exports = {
   generateToken,
   getCleanUser

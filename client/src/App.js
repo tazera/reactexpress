@@ -2,14 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import Login from './Login/Login';
 import Dashboard from './Dashboard/Dashboard';
-//import Footer from './Component/Footer';
-
 import PrivateRoute from './Utils/PrivateRoute';
-//import PublicRoute from './Utils/PublicRoute';
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 
 
@@ -39,20 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <Switch>
-        <Route path="/">
-            <Login />
-          </Route>
-
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-         
-        </Switch>
-      </BrowserRouter> */}
-
-
+    
      <BrowserRouter>
            <div className="content">
             <Switch>
@@ -61,7 +43,7 @@ function App() {
             </Switch>
           </div>
       </BrowserRouter>  
-     {/* <Footer/> */}
+     
      </div>
 
   );
@@ -70,12 +52,6 @@ function App() {
 
 export default App;
 
-
-
-{/* <div className="header">
-<NavLink activeClassName="active" to="/login">Login</NavLink><small>(Access without token only)</small>
-<NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small>(Access with token only)</small>
-</div>  */}
 
 
 

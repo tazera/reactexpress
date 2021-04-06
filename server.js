@@ -10,7 +10,7 @@ const app = express();
 
 
 
-// Beshe || 5000 promenih go na https://charge-point.herokuapp.com/ process.env.PORT ||
+
 const port = process.env.PORT || 5000;
 // enable CORS
 app.use(cors());
@@ -41,27 +41,16 @@ var admin = require("firebase-admin");
 
 var serviceAccount = require("./location-39d1f-firebase-adminsdk-qaydn-2387e03a78.json");
 
+// credetntial
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://location-39d1f-default-rtdb.firebaseio.com"
 });
 
-
+// db initinalization
 const db = admin.firestore();
 
 
-
-
-// const snapshot = await db.collection('location').get();
-// snapshot.forEach((doc) => {
-//   console.log(doc.id, '=>', doc.data());
-// });
-
-// app.get().then(function(querySnapshot) {
-//   querySnapshot.forEach(function(doc) {
-//       console.log(doc.id, " => ", doc.data());
-//   });
-// });
 
 
 app.get('/api/locations', async(req, res) => {
@@ -75,31 +64,7 @@ app.get('/api/locations', async(req, res) => {
 });
 
 
-
-// app.get('/api/users',(req, res) => {
-//   const users = [
-//       {id: 1, username: 'tazera', password: '12345'},
-//       {id: 2, username: 'judo', password: '1234'},
-//       {id: 3, username: 'pesho', password: '12345'},
-//   ];
-//   res.json(users);
-//  });
-
-
-// app.post('/users/signin', function (req, res) {
-//   const user = req.body.username;
-//   const pwd = req.body.password;
-
-//   // return 400 status if username/password is not exist
-//   if (!user || !pwd) {
-//     return res.status(400).json({
-//       error: true,
-//       message: "Username or Password required."
-//     });
-//   }
-
-
-// static user details
+// static user details for tests later should be changed from the db
 const userData = {
   userId: "789789",
   password: "1234",
@@ -136,7 +101,7 @@ app.use(function (req, res, next) {
 });
 
 
-//app.post('/api/users/signin', function (req, res) {
+
 // validate the user credentials
 app.post(`${process.env.PORT}/api/users/signin`, function (req, res) {
   const user = req.body.username;
@@ -197,13 +162,13 @@ app.get('/api/verifyToken', function (req, res) {
   });
 });
 
-
+// alternative routing if everything else doesnt catch it
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 
-
+// just a listener 
 app.listen(port, () => {
   console.log('Server started on: ' + port);
 });
